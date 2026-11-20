@@ -114,13 +114,13 @@ A notable qualitative pattern is that **progress is very fast in the first few g
 
 ![Evolutionary run trace A](docs/images/run_progress_41_experiments.png)
 
-*User-provided progress chart for a 41-experiment run. Large gains arrive early, followed by slower incremental improvements.*
+*Chart for a 41-experiment run. Large gains arrive early, followed by slower incremental improvements.*
 
 ### Example run B
 
 ![Evolutionary run trace B](docs/images/run_progress_62_experiments.png)
 
-*User-provided progress chart for a 62-experiment run. The same pattern appears: steep early improvement, then a longer phase of smaller refinements.*
+*Chart for a 62-experiment run. The same pattern appears: steep early improvement, then a longer phase of smaller refinements.*
 
 ### Offline demonstration (no API/GPU)
 
