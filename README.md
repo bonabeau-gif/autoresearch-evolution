@@ -106,9 +106,9 @@ Why this matters in practice:
 
 ## Example evolutionary run traces
 
-The two figures below were provided by the user from real evolutionary runs. They are included here as concrete examples of the kinds of trajectories this workflow can produce.
+The two figures below are examples of progress I obtained from evolutionary runs. They are included here as concrete examples of the kinds of trajectories this workflow can produce.
 
-A notable qualitative pattern is that **progress is very fast in the first few generations**. In both traces, the validation BPB drops sharply early on, and later work mostly refines an already much better frontier.
+A notable qualitative pattern is that **progress is very fast in the first few generations (faster than in the original greedy hill-climbing Autoresearch)**. In both traces, the validation BPB drops sharply early on, and later work mostly refines an already much better frontier.
 
 ### Example run A
 
