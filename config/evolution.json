@@ -1,0 +1,15 @@
+{
+  "population_size": 6,
+  "top_k": 2,
+  "tournament_size": 3,
+  "crossover_rate": 0.3,
+  "mutation_intensities": {"conservative": 0.4, "moderate": 0.4, "radical": 0.2},
+  "seed": 42,
+  "tie_epsilon": 0.000001,
+  "training_timeout_seconds": 600,
+  "preflight_timeout_seconds": 90,
+  "max_preflight_fixes": 2,
+  "plateau_generations": 5,
+  "catastrophic_generations": 3,
+  "minimum_parent_diversity": 2
+}

@@ -1,0 +1,9 @@
+# Security and operational constraints
+
+Autonomous code generation is **code execution**. The agent can emit arbitrary Python, including network requests, file IO, and OS calls. The evaluator checksum, Git staging restrictions and prompt constraints help maintain the *experiment protocol*, but are **not a sandbox**. Use a disposable isolated Linux GPU machine or container with limited filesystem access and no sensitive data mounted.
+
+Do not put credentials into `train.py`, `program.md`, Git commits, model prompts or logs. Use an API token with a spending limit, limit network egress on the worker if possible, and run with a non-privileged account. `OPENAI_API_KEY` is read by the controller and scrubbed from the GPU child process together with common cloud-token variables. This is only partial protection: the child still has access to the worker filesystem and potentially other credentials. For stronger security, put the LLM client on a separate host and sandbox the training child. Do not run this agent against a repository containing unpublished or confidential source code unless you approve sharing it with the selected LLM API provider.
+
+Only one GPU is used. Each model attempt is allowed a fixed 300-second training budget plus startup and validation. The 600-second process timeout is a hard safety guard rather than a second optimization goal. Very large radical variants may OOM, and those failures are logged. A fixed seed does not guarantee deterministic CUDA kernels. Stop the process with Ctrl+C; `run` resumes from the last completed slot after interruption.
+
+The historical log and Git source commits may contain generated code that violates experiment intent despite the text prompt. Inspect best candidates for metric hacking, data leakage, and validation-only optimization before trusting them. Never let the LLM edit `prepare.py` or `pyproject.toml` during a run.

@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+dist/
+build/
+.DS_Store
+.env
+# Untracked run artifacts required by program.md
+results.tsv
+population.tsv
+checkpoint.txt
+summary.txt
+environment.txt
+state.json
+run.log
+run.lock
+runs/
+reports/*.html
+reports/*.json
+# UV lock should be committed after first `uv lock` on the target platform.

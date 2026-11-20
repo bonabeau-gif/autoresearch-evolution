@@ -1,0 +1,24 @@
+[project]
+name = "autoresearch-evolution"
+version = "0.1.0"
+description = "Population-based autonomous LLM research on a fixed five-minute language-model benchmark"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.26,<3",
+  "pyarrow>=16,<24",
+  "requests>=2.31,<3",
+  "tiktoken>=0.7,<1",
+  "torch>=2.4,<3",
+]
+
+[project.scripts]
+evo-research = "autoresearch_evo.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["autoresearch_evo*"]
